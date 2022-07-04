@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./Header.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-
+import { Link } from "react-router-dom";
 function Header() {
   const [input, setInput] = useState("");
   const changeHandler = (event) => {
@@ -10,11 +10,13 @@ function Header() {
   };
   return (
     <div className={classes.header}>
-      <img
-        className={classes.headerLogo}
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-        alt=""
-      />
+      <Link to="/">
+        <img
+          className={classes.headerLogo}
+          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          alt=""
+        />
+      </Link>
 
       <div className={classes.headerSearch}>
         <input
@@ -40,10 +42,16 @@ function Header() {
           <span className={classes.headerOptionLineTwo}>Prime</span>
         </div>
 
-        <div className={classes.headerOptionBasket}>
-          <LocalGroceryStoreIcon />
-          <span className={`${classes.headerOptionBasketCount} ${classes.headerOptionLineTwo}` }>0</span>
-        </div>
+        <Link to="/checkout">
+          <div className={classes.headerOptionBasket}>
+            <LocalGroceryStoreIcon />
+            <span
+              className={`${classes.headerOptionBasketCount} ${classes.headerOptionLineTwo}`}
+            >
+              0
+            </span>
+          </div>
+        </Link>
       </div>
     </div>
   );

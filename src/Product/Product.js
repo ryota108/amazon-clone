@@ -1,23 +1,24 @@
 import React from "react";
 import classes from "./Product.module.css";
 
-function Product() {
+function Product({title,image,rating,price}) {
   return (
     <div className={classes.product}>
       <div className={classes.productInfo}>
-        <p>The lean startup</p>
+        <p>{title}</p>
         <p className={classes.productPrice}>
           <small>￥</small>
-          <strong>1999</strong>
+          <strong>{price}</strong>
         </p>
         <div className={classes.productRating}>
-          <p>★</p>
-          {/* <p>★</p>
-          <p>★</p> */}
+          {Array(rating).fill().map((_,i)=>(
+          <p>🌟</p>
+          ))}
+
         </div>
       </div>
       <img
-        src="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
+        src={image}
         alt=""
       />
 

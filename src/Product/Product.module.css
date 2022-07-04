@@ -11,10 +11,27 @@
   background-color: #fff;
   z-index: 1;
 }
-
+.product > button{
+  background:#f0c14b ;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+}
 .product > img{
   max-height: 200px;
   width: 100%;
   object-fit: contain;
+  margin-bottom: 15px;
+}
+.productPrice{
+  margin-top: 5px;
+}
+.productRating{
+  display: flex;
+}
+.productInfo{
+  text-align: left;
+  height: 100px;
   margin-bottom: 15px;
 }
