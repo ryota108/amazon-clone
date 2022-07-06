@@ -3,7 +3,9 @@ import classes from "./Header.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import { Link } from "react-router-dom";
+import {useStateValue} from "../store/StateProvider";
 function Header() {
+  const [{ cart }, dispatch] = useStateValue();
   const [input, setInput] = useState("");
   const changeHandler = (event) => {
     setInput(event.target.value);
@@ -48,7 +50,7 @@ function Header() {
             <span
               className={`${classes.headerOptionBasketCount} ${classes.headerOptionLineTwo}`}
             >
-              0
+              {cart?.length}
             </span>
           </div>
         </Link>

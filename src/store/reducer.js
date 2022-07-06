@@ -10,7 +10,9 @@ const reducer = (state, action) => {
         ...state,
         cart: [...state.cart, action.item],
       };
-      default : return state;
+
+      default:
+         return state;
   }
 };
 
